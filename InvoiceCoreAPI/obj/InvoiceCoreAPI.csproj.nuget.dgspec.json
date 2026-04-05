@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj": {}
+    "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj": {
+    "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj",
+        "projectUniqueName": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj",
         "projectName": "InvoiceCoreAPI",
-        "projectPath": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj",
+        "projectPath": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\InvoiceCoreAPI.csproj",
         "packagesPath": "C:\\Users\\AKASH\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\InvoiceCoreAPI\\obj\\",
+        "outputPath": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
