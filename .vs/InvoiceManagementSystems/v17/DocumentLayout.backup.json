@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|d:\\projects\\coreapi\\invoicemanagementsystems\\invoice_.netcoreapi\\invoicecoreapi\\contracts\\iitemmasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|solutionrelative:invoicecoreapi\\contracts\\iitemmasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|d:\\projects\\coreapi\\invoicemanagementsystems\\invoice_.netcoreapi\\invoicecoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|solutionrelative:invoicecoreapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|d:\\projects\\coreapi\\invoicemanagementsystems\\invoice_.netcoreapi\\invoicecoreapi\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|solutionrelative:invoicecoreapi\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|d:\\projects\\coreapi\\invoicemanagementsystems\\invoice_.netcoreapi\\invoicecoreapi\\controllers\\itemmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}|InvoiceCoreAPI\\InvoiceCoreAPI.csproj|solutionrelative:invoicecoreapi\\controllers\\itemmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApiResponse.cs",
-              "DocumentMoniker": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Models\\ApiResponse.cs",
-              "RelativeDocumentMoniker": "InvoiceCoreAPI\\Models\\ApiResponse.cs",
-              "ToolTip": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Models\\ApiResponse.cs",
-              "RelativeToolTip": "InvoiceCoreAPI\\Models\\ApiResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Program.cs",
+              "RelativeDocumentMoniker": "InvoiceCoreAPI\\Program.cs",
+              "ToolTip": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Program.cs",
+              "RelativeToolTip": "InvoiceCoreAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowFUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T07:42:52.555Z",
+              "WhenOpened": "2026-04-05T12:32:40.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IItemMasterService.cs",
-              "DocumentMoniker": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Contracts\\IItemMasterService.cs",
-              "RelativeDocumentMoniker": "InvoiceCoreAPI\\Contracts\\IItemMasterService.cs",
-              "ToolTip": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Contracts\\IItemMasterService.cs",
-              "RelativeToolTip": "InvoiceCoreAPI\\Contracts\\IItemMasterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ItemMasterController.cs",
+              "DocumentMoniker": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Controllers\\ItemMasterController.cs",
+              "RelativeDocumentMoniker": "InvoiceCoreAPI\\Controllers\\ItemMasterController.cs",
+              "ToolTip": "D:\\Projects\\coreAPI\\InvoiceManagementSystems\\Invoice_.NetCoreApi\\InvoiceCoreAPI\\Controllers\\ItemMasterController.cs",
+              "RelativeToolTip": "InvoiceCoreAPI\\Controllers\\ItemMasterController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-05T07:39:13.016Z",
+              "WhenOpened": "2026-04-05T12:13:37.148Z",
               "EditorCaption": ""
             }
           ]
