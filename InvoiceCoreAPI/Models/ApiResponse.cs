@@ -7,4 +7,6 @@ public class ApiResponse<T>
     public T? Data { get; set; }
     public ApiError? Error { get; set; }
     public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+
+    public int TotalRecords { get; set; }
 }
