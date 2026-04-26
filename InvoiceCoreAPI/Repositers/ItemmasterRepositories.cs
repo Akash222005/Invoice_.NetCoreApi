@@ -1,12 +1,14 @@
 ﻿using InvoiceCoreAPI.Contracts;
 using InvoiceCoreAPI.Data;
+using InvoiceCoreAPI.DTO;
 using InvoiceCoreAPI.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace InvoiceCoreAPI.Repositories;
 
-public class ItemMasterRepository: IItemMasterRepository
+public class ItemMasterRepository : IItemMasterRepository
 {
     private readonly AppDbContext _dbContext;
     public ItemMasterRepository(AppDbContext dbContext)
@@ -74,7 +76,7 @@ public class ItemMasterRepository: IItemMasterRepository
 
     public async Task<ItemMaster?> GetByIdAsync(int id)
     {
-        var items = await _dbContext.ItemMasters.FromSqlRaw("EXEC SP_Itemmaster_GetById @Id", new SqlParameter("@Id",id))
+        var items = await _dbContext.ItemMasters.FromSqlRaw("EXEC SP_Itemmaster_GetById @Id", new SqlParameter("@Id", id))
              .AsNoTracking()
              .ToListAsync();
         return items.FirstOrDefault();
@@ -95,4 +97,62 @@ public class ItemMasterRepository: IItemMasterRepository
 
         return affectedRows > 0;
     }
+    public async Task<PagedResultDto<ItemMaster>> GetAllPagedAsync(
+    string? catCode,
+    string? itemName,
+    string? uom,
+    int pageNumber,
+    int pageSize)
+    {
+        using (var connection = _dbContext.Database.GetDbConnection())
+        {
+            await connection.OpenAsync();
+            using var command = connection.CreateCommand();
+            command.CommandText = "sp_Itemmaster_GetPaged";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add(new SqlParameter("@CatCode", (object?)catCode ?? DBNull.Value));
+            command.Parameters.Add(new SqlParameter("@ItemName", (object?)itemName ?? DBNull.Value));
+            command.Parameters.Add(new SqlParameter("@Uom", (object?)uom ?? DBNull.Value));
+            command.Parameters.Add(new SqlParameter("@PageNumber", pageNumber));
+            command.Parameters.Add(new SqlParameter("@PageSize", pageSize));
+
+            using var reader = await command.ExecuteReaderAsync();
+
+            var items = new List<ItemMaster>();
+
+            while (await reader.ReadAsync())
+            {
+                items.Add(new ItemMaster
+                {
+                    Id = reader.GetInt32(0),
+                    CatCode = reader.GetString(1),
+                    ItemBarCode = reader.GetString(2),
+                    ItemCode = reader.GetString(3),
+                    ItemName = reader.GetString(4),
+                    Description = reader.GetString(5),
+                    Uom = reader.GetString(6),
+                    Rate = reader.GetDecimal(7),
+                    MinimumStock = reader.GetDecimal(8),
+                    MaximumStock = reader.GetDecimal(9),
+                    IsActive = reader.GetBoolean(10)
+                });
+            }
+
+            await reader.NextResultAsync();
+
+            int totalRecords = 0;
+            if (await reader.ReadAsync())
+            {
+                totalRecords = reader.GetInt32(0);
+            }
+
+            return new PagedResultDto<ItemMaster>
+            {
+                Data = items,
+                TotalRecords = totalRecords
+            };
+
+        }
+    }
+
 }
