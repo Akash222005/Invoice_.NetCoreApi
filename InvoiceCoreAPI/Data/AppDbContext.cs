@@ -11,6 +11,8 @@ public class AppDbContext : DbContext
 
     public DbSet<ItemMaster> ItemMasters { get; set; }
 
+    public DbSet<Category> Category { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

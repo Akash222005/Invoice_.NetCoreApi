@@ -16,7 +16,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IItemMasterRepository, ItemMasterRepository>();
 builder.Services.AddScoped<IItemMasterService, ItemMasterService>();
 builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
-
+builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddAutoMapper(typeof(CategoryProfile));
 // Add services to the container.
 var AllowAngular = "_allowAngular";
 
