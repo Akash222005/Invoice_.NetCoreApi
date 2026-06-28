@@ -13,6 +13,8 @@ public class AppDbContext : DbContext
 
     public DbSet<Category> Category { get; set; }
 
+
+    public DbSet<Customer> Customer { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
