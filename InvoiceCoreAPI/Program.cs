@@ -22,6 +22,10 @@ builder.Services.AddAutoMapper(typeof(CategoryProfile));
 builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
 builder.Services.AddScoped<IVendorService, VendorService>();
 builder.Services.AddAutoMapper(typeof(VendorProfile));
+
+builder.Services.AddScoped<ICustomerRepository, CustomerRepositories>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddAutoMapper(typeof(CustomerProfile));
 // Add services to the container.
 var AllowAngular = "_allowAngular";
 
