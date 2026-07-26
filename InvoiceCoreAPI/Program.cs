@@ -19,6 +19,10 @@ builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
 builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
+builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
+builder.Services.AddScoped<IVendorService, VendorService>();
+builder.Services.AddAutoMapper(typeof(VendorProfile));
+
 builder.Services.AddScoped<ICustomerRepository, CustomerRepositories>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddAutoMapper(typeof(CustomerProfile));
