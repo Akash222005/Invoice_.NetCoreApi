@@ -1,5 +1,6 @@
 using InvoiceCoreAPI.Contracts;
 using InvoiceCoreAPI.Data;
+using InvoiceCoreAPI.Mapper;
 using InvoiceCoreAPI.Repositories;
 using InvoiceCoreAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -21,7 +22,15 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
 builder.Services.AddScoped<IUsersRepository, UsersRepositories>();
 builder.Services.AddScoped<IUsersService, UsersService>();
-builder.Services.AddAutoMapper(typeof(UsersService));
+builder.Services.AddAutoMapper(typeof(UsersProfile));
+
+builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
+builder.Services.AddScoped<IVendorService, VendorService>();
+builder.Services.AddAutoMapper(typeof(VendorProfile));
+
+builder.Services.AddScoped<ICustomerRepository, CustomerRepositories>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddAutoMapper(typeof(CustomerProfile));
 // Add services to the container.
 var AllowAngular = "_allowAngular";
 
