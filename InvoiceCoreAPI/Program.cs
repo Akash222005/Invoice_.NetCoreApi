@@ -1,5 +1,6 @@
 using InvoiceCoreAPI.Contracts;
 using InvoiceCoreAPI.Data;
+using InvoiceCoreAPI.Mapper;
 using InvoiceCoreAPI.Repositories;
 using InvoiceCoreAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -19,6 +20,10 @@ builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
 builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddAutoMapper(typeof(CategoryProfile));
+builder.Services.AddScoped<IUsersRepository, UsersRepositories>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddAutoMapper(typeof(UsersProfile));
+
 builder.Services.AddScoped<IVendorRepository, VendorRepositories>();
 builder.Services.AddScoped<IVendorService, VendorService>();
 builder.Services.AddAutoMapper(typeof(VendorProfile));
