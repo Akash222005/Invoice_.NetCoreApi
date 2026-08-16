@@ -5,7 +5,7 @@ public class ItemMasterDto
 {
     public int Id { get; set; }
 
-    public string CatCode { get; set; }
+    public int CategoryId { get; set; }
 
     public string ItemBarCode { get; set; }
 

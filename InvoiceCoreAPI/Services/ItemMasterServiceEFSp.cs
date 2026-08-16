@@ -5,11 +5,11 @@ using InvoiceCoreAPI.Entities;
 using InvoiceCoreAPI.Repositories;
 namespace InvoiceCoreAPI.Services
 {
-    public class ItemMasterService : IItemMasterService
+    public class ItemMasterServiceEFSp : IItemMasterService
     {
-        private readonly IItemMasterRepository _repository;
+        private readonly IItemmasterRepository _repository;
         private readonly IMapper _mapper;
-        public ItemMasterService(IItemMasterRepository repository, IMapper mapper)
+        public ItemMasterServiceEFSp(IItemmasterRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -39,14 +39,9 @@ namespace InvoiceCoreAPI.Services
             return await _repository.DeleteAsync(id);
         }
         public async Task<PagedResultDto<ItemMasterDto>> GetAllPagedAsync(
-        string? catCode,
-        string? itemName,
-        string? uom,
-        int pageNumber,
-        int pageSize)
+       ItemmasterFilterDto search)
         {
-            var result = await _repository.GetAllPagedAsync(
-                catCode, itemName, uom, pageNumber, pageSize);
+            var result = await _repository.GetAllPagedAsync(search);
 
             return new PagedResultDto<ItemMasterDto>
             {

@@ -11,8 +11,7 @@ namespace InvoiceCoreAPI.Entities;
         public int Id { get; set; }
 
         [Required]
-        [StringLength(5)]
-        public string CatCode { get; set; } = string.Empty;
+        public required int CategoryId { get; set; }
 
         [Required]
         [StringLength(25)]

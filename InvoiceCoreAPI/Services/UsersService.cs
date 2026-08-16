@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿ using AutoMapper;
 
 using InvoiceCoreAPI.Contracts;
 
