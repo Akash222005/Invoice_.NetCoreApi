@@ -1,4 +1,5 @@
 ﻿using InvoiceCoreAPI.Contracts;
+using InvoiceCoreAPI.Controllers;
 using InvoiceCoreAPI.Data;
 using InvoiceCoreAPI.DTO;
 using InvoiceCoreAPI.Entities;
@@ -11,9 +12,14 @@ namespace InvoiceCoreAPI.Repositories;
 public class ItemMasterRepositoryEFSp : IItemmasterRepository
 {
     private readonly AppDbContext _dbContext;
-    public ItemMasterRepositoryEFSp(AppDbContext dbContext)
-    {
+
+    private readonly ILogger<ItemMasterRepositoryEFSp> _logger;
+    public ItemMasterRepositoryEFSp(
+        AppDbContext dbContext,
+        ILogger<ItemMasterRepositoryEFSp> logger)
+    { 
         _dbContext = dbContext;
+        _logger = logger;
     }
     public async Task<int> AddAsync(ItemMaster itemmaster)
     {
@@ -102,6 +108,7 @@ public class ItemMasterRepositoryEFSp : IItemmasterRepository
 
 
     {
+        _logger.LogInformation("ItemsMaster Service Repostiory GetAllPaged Async Method Called");
         using (var connection = _dbContext.Database.GetDbConnection())
         {
             await connection.OpenAsync();
@@ -161,6 +168,7 @@ public class ItemMasterRepositoryEFSp : IItemmasterRepository
             if (await reader.ReadAsync())
             {
                 totalRecords = reader.GetInt32(
+
                     reader.GetOrdinal("TotalRecords"));
             }
 
