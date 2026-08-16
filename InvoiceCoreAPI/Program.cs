@@ -8,8 +8,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using Serilog;
+using InvoiceCoreAPI.Middleware;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File(
+        "logs/log.txt",
+        rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
 var builder =WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
@@ -124,6 +136,8 @@ builder.Services.AddSwaggerGen(c => {
 
 var app = builder.Build();
 
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
