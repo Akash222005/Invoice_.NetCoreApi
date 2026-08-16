@@ -14,8 +14,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
-builder.Services.AddScoped<IItemMasterRepository, ItemMasterRepository>();
-builder.Services.AddScoped<IItemMasterService, ItemMasterService>();
+builder.Services.AddScoped<IItemmasterRepository, ItemMasterRepositoryEFSp>();
+builder.Services.AddScoped<IItemMasterService, ItemMasterServiceEFSp>();
 builder.Services.AddAutoMapper(typeof(ItemMasterProfile));
 builder.Services.AddScoped<ICategoryRepository, CategoryRepositories>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();

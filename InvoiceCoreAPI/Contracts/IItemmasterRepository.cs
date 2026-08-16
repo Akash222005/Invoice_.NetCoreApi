@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 namespace InvoiceCoreAPI.Contracts;
 
-public interface IItemMasterRepository
+public interface IItemmasterRepository
 {
     Task<int> AddAsync(ItemMaster itemmaster);
     Task<IEnumerable<ItemMaster>> GetAllAsync();
@@ -16,14 +16,6 @@ public interface IItemMasterRepository
 
     Task<PagedResultDto<ItemMaster>> GetAllPagedAsync(
 
-    string? catCode,
-
-    string? itemName,
-
-    string? uom,
-
-    int pageNumber,
-
-    int pageSize);
+    ItemmasterFilterDto search);
 
 }
