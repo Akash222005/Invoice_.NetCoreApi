@@ -1,27 +1,29 @@
 ﻿using InvoiceCoreAPI.DTO;
+using InvoiceCoreAPI.Models;
 namespace InvoiceCoreAPI.Contracts;
 
 public interface IUsersService
 {
-    Task<int> AddAsync(UsersDto dto);
+    
+    Task<ApiResponse<IEnumerable<UsersDto>>> GetAllAsync();
 
-    Task<IEnumerable<UsersDto>> GetAllAsync();
+    Task<ApiResponse<UsersDto?>> GetByIdAsync(int id);
 
-    Task<UsersDto?> GetByIdAsync(int id);
+    Task<ApiResponse<UsersDto>> AddAsync(UserCreateDto dto);
 
-    Task<bool> UpdateAsync(UsersDto dto);
+    Task<ApiResponse<UsersDto>> UpdateAsync(
+        int id,
+        UserUpdateDto dto);
 
-    Task<bool> DeleteAsync(int id);
+    Task<ApiResponse<bool>> DeleteAsync(int id, string updatedBy);
 
-    Task<PagedResultDto<UsersDto>> GetAllPagedAsync(
-    string? UserName,
-    string? FirstName,
-    string? LastName,
-    string? PhoneNumber,
-    string? City,
-    DateTime? DateOfBirth,
-    bool? IsActive,
-    int pageNumber,
-    int pageSize);
+    Task<ApiResponse<PagedResultDto<UsersDto>>> GetAllPagedAsync(
+        UserFilterDto filter);
+
+    Task<UsersDto?> ValidateUserAsync(
+        string userName,
+        string password);
+
+
 
 }
