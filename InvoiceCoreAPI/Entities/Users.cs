@@ -20,7 +20,7 @@ namespace InvoiceCoreAPI.Entities;
 
         [Required]
         [StringLength(500)]
-        public string Password { get; set; }
+        public string PasswordHash { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -64,6 +64,8 @@ namespace InvoiceCoreAPI.Entities;
         public bool IsActive { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public DateTime? LastLoginDate { get; set; }
 
     [StringLength(100)]
     public string CreatedBy { get; set; } = string.Empty;
