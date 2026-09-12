@@ -61,6 +61,8 @@ builder.Services.AddAutoMapper(typeof(VendorProfile));
 builder.Services.AddScoped<ICustomerRepository, CustomerRepositories>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddAutoMapper(typeof(CustomerProfile));
+builder.Services.AddScoped<IMockAIProvider, MockAIProvider>();
+builder.Services.AddScoped<IAIService, AIService>();
 
 builder.Services.AddApiVersioning(options =>
 {
