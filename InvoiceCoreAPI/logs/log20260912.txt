@@ -1,0 +1,102 @@
+2026-09-12 13:05:38.687 +05:30 [INF] User profile is available. Using 'C:\Users\AKASH\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 13:05:39.295 +05:30 [INF] Now listening on: http://localhost:5234
+2026-09-12 13:05:39.546 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 13:05:39.549 +05:30 [INF] Hosting environment: Development
+2026-09-12 13:05:39.551 +05:30 [INF] Content root path: D:\Test Projects\Api\Invoice_.NetCoreApi\InvoiceCoreAPI
+2026-09-12 13:05:40.280 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5234/swagger/index.html - null null
+2026-09-12 13:05:42.474 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5234/swagger/index.html - 200 null text/html;charset=utf-8 2219.4237ms
+2026-09-12 13:05:42.526 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5234/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 13:05:42.526 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5234/_vs/browserLink - null null
+2026-09-12 13:05:42.535 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5234/_framework/aspnetcore-browser-refresh.js - 200 16513 application/javascript; charset=utf-8 11.0059ms
+2026-09-12 13:05:42.665 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5234/_vs/browserLink - 200 null text/javascript; charset=UTF-8 140.6455ms
+2026-09-12 13:05:42.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5234/swagger/v1/swagger.json - null null
+2026-09-12 13:05:42.873 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5234/swagger/favicon-32x32.png - null null
+2026-09-12 13:05:42.907 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-12 13:05:42.910 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5234/swagger/favicon-32x32.png - 200 628 image/png 37.275ms
+2026-09-12 13:05:42.923 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5234/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.2957ms
+2026-09-12 13:06:22.042 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5234/api/v1/Login - application/json 52
+2026-09-12 13:06:22.064 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:06:22.067 +05:30 [INF] Request origin http://localhost:5234 does not have permission to access the resource.
+2026-09-12 13:06:22.098 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-09-12 13:06:22.143 +05:30 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(InvoiceCoreAPI.DTO.LoginRequestDto) on controller InvoiceCoreAPI.Controllers.LoginController (InvoiceCoreAPI).
+2026-09-12 13:06:24.378 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[InvoiceCoreAPI.DTO.LoginResponseDto, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 13:06:24.419 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.LoginController.Login (InvoiceCoreAPI) in 2266.5023ms
+2026-09-12 13:06:24.423 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.LoginController.Login (InvoiceCoreAPI)'
+2026-09-12 13:06:24.428 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5234/api/v1/Login - 200 null application/json; charset=utf-8 2386.3133ms
+2026-09-12 13:07:41.310 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5234/api/ai/ask - application/json 54
+2026-09-12 13:07:41.407 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:07:41.422 +05:30 [INF] Request origin http://localhost:5234 does not have permission to access the resource.
+2026-09-12 13:07:41.434 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:07:41.445 +05:30 [INF] Route matched with {action = "Ask", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(InvoiceCoreAPI.Models.AI.AIAskRequest) on controller InvoiceCoreAPI.Controllers.AIController (InvoiceCoreAPI).
+2026-09-12 13:07:42.315 +05:30 [INF] Processing AI question: How many active items are in Rice?
+2026-09-12 13:07:42.320 +05:30 [INF] Mock LLM processing question: How many active items are in Rice?
+2026-09-12 13:07:42.333 +05:30 [INF] Mock LLM returned intent: {"intent":"CategoryItemCount","categoryName":"Rice","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:07:42.335 +05:30 [INF] Intent received from Mock LLM: {"intent":"CategoryItemCount","categoryName":"Rice","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:07:43.763 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_Category_GetAll
+2026-09-12 13:07:44.042 +05:30 [ERR] Error while processing AI request
+Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.sp_AI_CategoryItemCount'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at InvoiceCoreAPI.Repositories.CategoryRepositories.GetCategoryItemCountAsync(String categoryName, Boolean categoryActiveOnly, Nullable`1 itemActiveOnly) in D:\Test Projects\Api\Invoice_.NetCoreApi\InvoiceCoreAPI\Repositers\CategoryRepositories.cs:line 262
+   at InvoiceCoreAPI.Services.AIService.AskAsync(AIAskRequest request) in D:\Test Projects\Api\Invoice_.NetCoreApi\InvoiceCoreAPI\Services\AIService.cs:line 107
+   at InvoiceCoreAPI.Controllers.AIController.Ask(AIAskRequest request) in D:\Test Projects\Api\Invoice_.NetCoreApi\InvoiceCoreAPI\Controllers\AIController.cs:line 39
+ClientConnectionId:53d73bde-2c5d-43ec-b894-e93e5fbd754b
+Error Number:2812,State:62,Class:16
+2026-09-12 13:07:44.112 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-09-12 13:07:44.118 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI) in 2668.1003ms
+2026-09-12 13:07:44.121 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:07:44.134 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5234/api/ai/ask - 500 null application/json; charset=utf-8 2823.9842ms
+2026-09-12 13:13:48.790 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5234/api/ai/ask - application/json 54
+2026-09-12 13:13:48.802 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:13:48.804 +05:30 [INF] Request origin http://localhost:5234 does not have permission to access the resource.
+2026-09-12 13:13:48.807 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:13:48.809 +05:30 [INF] Route matched with {action = "Ask", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(InvoiceCoreAPI.Models.AI.AIAskRequest) on controller InvoiceCoreAPI.Controllers.AIController (InvoiceCoreAPI).
+2026-09-12 13:13:48.817 +05:30 [INF] Processing AI question: How many active items are in Rice?
+2026-09-12 13:13:48.820 +05:30 [INF] Mock LLM processing question: How many active items are in Rice?
+2026-09-12 13:13:48.822 +05:30 [INF] Mock LLM returned intent: {"intent":"CategoryItemCount","categoryName":"Rice","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:13:48.824 +05:30 [INF] Intent received from Mock LLM: {"intent":"CategoryItemCount","categoryName":"Rice","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:13:48.893 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_Category_GetAll
+2026-09-12 13:13:48.936 +05:30 [INF] Database result - Category: Rice, ItemActiveOnly: true, Count: 4
+2026-09-12 13:13:48.941 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[InvoiceCoreAPI.Models.AI.AIAskResponse, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 13:13:48.947 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI) in 134.2446ms
+2026-09-12 13:13:48.950 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:13:48.953 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5234/api/ai/ask - 200 null application/json; charset=utf-8 165.6808ms
+2026-09-12 13:16:03.053 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5234/api/ai/ask - application/json 57
+2026-09-12 13:16:03.066 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:16:03.068 +05:30 [INF] Request origin http://localhost:5234 does not have permission to access the resource.
+2026-09-12 13:16:03.071 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:16:03.076 +05:30 [INF] Route matched with {action = "Ask", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(InvoiceCoreAPI.Models.AI.AIAskRequest) on controller InvoiceCoreAPI.Controllers.AIController (InvoiceCoreAPI).
+2026-09-12 13:16:03.087 +05:30 [INF] Processing AI question: How many active items are in General?
+2026-09-12 13:16:03.089 +05:30 [INF] Mock LLM processing question: How many active items are in General?
+2026-09-12 13:16:03.091 +05:30 [INF] Mock LLM returned intent: {"intent":"CategoryItemCount","categoryName":"General","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:16:03.093 +05:30 [INF] Intent received from Mock LLM: {"intent":"CategoryItemCount","categoryName":"General","categoryActiveOnly":true,"itemActiveOnly":true}
+2026-09-12 13:16:03.205 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_Category_GetAll
+2026-09-12 13:16:03.244 +05:30 [INF] Database result - Category: General, ItemActiveOnly: true, Count: 22
+2026-09-12 13:16:03.247 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[InvoiceCoreAPI.Models.AI.AIAskResponse, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 13:16:03.250 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI) in 170.2804ms
+2026-09-12 13:16:03.254 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:16:03.256 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5234/api/ai/ask - 200 null application/json; charset=utf-8 204.6148ms
+2026-09-12 13:16:43.522 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5234/api/ai/ask - application/json 59
+2026-09-12 13:16:43.582 +05:30 [INF] CORS policy execution failed.
+2026-09-12 13:16:43.583 +05:30 [INF] Request origin http://localhost:5234 does not have permission to access the resource.
+2026-09-12 13:16:43.585 +05:30 [INF] Executing endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:16:43.587 +05:30 [INF] Route matched with {action = "Ask", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Ask(InvoiceCoreAPI.Models.AI.AIAskRequest) on controller InvoiceCoreAPI.Controllers.AIController (InvoiceCoreAPI).
+2026-09-12 13:16:43.592 +05:30 [INF] Processing AI question: How many inactive items are in General?
+2026-09-12 13:16:43.594 +05:30 [INF] Mock LLM processing question: How many inactive items are in General?
+2026-09-12 13:16:43.596 +05:30 [INF] Mock LLM returned intent: {"intent":"CategoryItemCount","categoryName":"General","categoryActiveOnly":true,"itemActiveOnly":false}
+2026-09-12 13:16:43.597 +05:30 [INF] Intent received from Mock LLM: {"intent":"CategoryItemCount","categoryName":"General","categoryActiveOnly":true,"itemActiveOnly":false}
+2026-09-12 13:16:43.607 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_Category_GetAll
+2026-09-12 13:16:43.622 +05:30 [INF] Database result - Category: General, ItemActiveOnly: false, Count: 1
+2026-09-12 13:16:43.626 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[InvoiceCoreAPI.Models.AI.AIAskResponse, InvoiceCoreAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-12 13:16:43.630 +05:30 [INF] Executed action InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI) in 38.9809ms
+2026-09-12 13:16:43.633 +05:30 [INF] Executed endpoint 'InvoiceCoreAPI.Controllers.AIController.Ask (InvoiceCoreAPI)'
+2026-09-12 13:16:43.635 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5234/api/ai/ask - 200 null application/json; charset=utf-8 113.31ms
