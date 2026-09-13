@@ -1,14 +1,13 @@
-﻿using InvoiceCoreAPI.Contracts;
-using InvoiceCoreAPI.Data;
-using InvoiceCoreAPI.DTO;
-using InvoiceCoreAPI.Entities;
+﻿using Invoice.DAL.Contracts;
 using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Moq;
+using Invoice.Data.Db;
+using Invoice.Data.Entities;
 using System.Data;
+using Invoice.DTOs;
+using Invoice.Model.AI;
+using Microsoft.EntityFrameworkCore;
 
-
-namespace InvoiceCoreAPI.Repositories;
+namespace Invoice.DAL.Repository;
 
 public class CustomerRepositories : ICustomerRepository
 {
@@ -17,7 +16,7 @@ public class CustomerRepositories : ICustomerRepository
     {
         _dbContext = dbContext;
     }
-    public async Task<int> AddAsync(Customer customer)
+    public async Task<int> AddAsync(CustomerEntity entity)
     {
         var result = await _dbContext.Database.ExecuteSqlRawAsync(
 
@@ -34,22 +33,22 @@ public class CustomerRepositories : ICustomerRepository
             @Country,
             @ZipCode,
             @GstNo",
-            new SqlParameter("@CustomerCode", customer.CustomerCode),
-            new SqlParameter("@CustomerName", customer.CustomerName),
-            new SqlParameter("@ContactPerson", (object?)customer.ContactPerson ?? DBNull.Value),
-            new SqlParameter("@MobilNo", (object?)customer.MobileNo ?? DBNull.Value),
-            new SqlParameter("@Email", (object?)customer.Email ?? DBNull.Value),
-            new SqlParameter("@Address1", (object?)customer.Address1 ?? DBNull.Value),
-            new SqlParameter("@Address2", (object?)customer.Address2 ?? DBNull.Value),
-            new SqlParameter("@City", (object?)customer.City ?? DBNull.Value),
-            new SqlParameter("@State", (object?)customer.State ?? DBNull.Value),
-            new SqlParameter("@Country", (object?)customer.Country ?? DBNull.Value),
-            new SqlParameter("@ZipCode", (object?)customer.ZipCode ?? DBNull.Value),
-            new SqlParameter("@GstNo", (object?)customer.GstNo ?? DBNull.Value)
+            new SqlParameter("@CustomerCode", entity.CustomerCode),
+            new SqlParameter("@CustomerName", entity.CustomerName),
+            new SqlParameter("@ContactPerson", (object?)entity.ContactPerson ?? DBNull.Value),
+            new SqlParameter("@MobilNo", (object?)entity.MobileNo ?? DBNull.Value),
+            new SqlParameter("@Email", (object?)entity.Email ?? DBNull.Value),
+            new SqlParameter("@Address1", (object?)entity.Address1 ?? DBNull.Value),
+            new SqlParameter("@Address2", (object?)entity.Address2 ?? DBNull.Value),
+            new SqlParameter("@City", (object?)entity.City ?? DBNull.Value),
+            new SqlParameter("@State", (object?)entity.State ?? DBNull.Value),
+            new SqlParameter("@Country", (object?)entity.Country ?? DBNull.Value),
+            new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
+            new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value)
             );
         return result;
     }
-    public async Task<bool> UpdateAsync(Customer customer)
+    public async Task<bool> UpdateAsync(CustomerEntity entity)
     {
         var affectedRows = await _dbContext.Database.ExecuteSqlRawAsync(
             @"EXEC sp_Customer_Update
@@ -68,24 +67,24 @@ public class CustomerRepositories : ICustomerRepository
             @GstNo,
              @IsActive",
 
-            new SqlParameter("@Id", customer.Id),
-            new SqlParameter("@CustomerCode", customer.CustomerCode),
-            new SqlParameter("@CustomerName", customer.CustomerName),
-            new SqlParameter("@ContactPerson", (object?)customer.ContactPerson ?? DBNull.Value),
-            new SqlParameter("@MobilNo", (object?)customer.MobileNo ?? DBNull.Value),
-            new SqlParameter("@Email", (object?)customer.Email ?? DBNull.Value),
-            new SqlParameter("@Address1", (object?)customer.Address1 ?? DBNull.Value),
-            new SqlParameter("@Address2", (object?)customer.Address2 ?? DBNull.Value),
-            new SqlParameter("@City", (object?)customer.City ?? DBNull.Value),
-            new SqlParameter("@State", (object?)customer.State ?? DBNull.Value),
-            new SqlParameter("@Country", (object?)customer.Country ?? DBNull.Value),
-            new SqlParameter("@ZipCode", (object?)customer.ZipCode ?? DBNull.Value),
-            new SqlParameter("@GstNo", (object?)customer.GstNo ?? DBNull.Value),
-            new SqlParameter("@IsActive", customer.IsActive)
+            new SqlParameter("@Id", entity.Id),
+            new SqlParameter("@CustomerCode", entity.CustomerCode),
+            new SqlParameter("@CustomerName", entity.CustomerName),
+            new SqlParameter("@ContactPerson", (object?)entity.ContactPerson ?? DBNull.Value),
+            new SqlParameter("@MobilNo", (object?)entity.MobileNo ?? DBNull.Value),
+            new SqlParameter("@Email", (object?)entity.Email ?? DBNull.Value),
+            new SqlParameter("@Address1", (object?)entity.Address1 ?? DBNull.Value),
+            new SqlParameter("@Address2", (object?)entity.Address2 ?? DBNull.Value),
+            new SqlParameter("@City", (object?)entity.City ?? DBNull.Value),
+            new SqlParameter("@State", (object?)entity.State ?? DBNull.Value),
+            new SqlParameter("@Country", (object?)entity.Country ?? DBNull.Value),
+            new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
+            new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value),
+            new SqlParameter("@IsActive", entity.IsActive)
             );
         return affectedRows > 0;
     }
-    public async Task<Customer?> GetByIdAsync(int id)
+    public async Task<CustomerEntity?> GetByIdAsync(int id)
     {
         var customers = await _dbContext.Customers.FromSqlRaw(
             @"EXEC sp_Customer_GetById
@@ -95,7 +94,7 @@ public class CustomerRepositories : ICustomerRepository
             .ToListAsync();
         return customers.FirstOrDefault();
     }
-    public async Task<IEnumerable<Customer>> GetAllAsync()
+    public async Task<IEnumerable<CustomerEntity>> GetAllAsync()
     {
         return await _dbContext.Customers.FromSqlRaw(
             @"EXEC sp_Customer_GetAll")
@@ -108,7 +107,7 @@ public class CustomerRepositories : ICustomerRepository
             new SqlParameter("@Id", id));
         return affectedRows > 0;
     }
-    public async Task<PagedResultDto<Customer>> GetAllPagedAsync(
+    public async Task<PagedResultDto<CustomerEntity>> GetAllPagedAsync(
         string? CustomerCode,
         string? CustomerName,
         string? MobileNo,
@@ -130,10 +129,10 @@ public class CustomerRepositories : ICustomerRepository
             command.Parameters.Add(new SqlParameter("@PageSize", PageSize));
 
             using var reader = await command.ExecuteReaderAsync();
-            var customers = new List<Customer>();
+            var customers = new List<CustomerEntity>();
             while (await reader.ReadAsync())
             {
-                customers.Add(new Customer
+                customers.Add(new CustomerEntity
                 {
                     Id = reader.GetInt32(0),
                     CustomerCode = reader.GetString(1),
@@ -162,7 +161,7 @@ public class CustomerRepositories : ICustomerRepository
             {
                 totalRecords = reader.GetInt32(0);
             }
-            return new PagedResultDto<Customer>
+            return new PagedResultDto<CustomerEntity>
             {
                 Data = customers,
                 TotalRecords = totalRecords
