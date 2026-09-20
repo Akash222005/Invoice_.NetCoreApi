@@ -14,13 +14,13 @@ public class ItemmasterRepositoriesEFSp : IItemmasterRepository
 {
     private readonly AppDbContext _dbContext;
 
-    private readonly ILogger<ItemmasterRepositoriesEFSp> _logger;
+    
     public ItemmasterRepositoriesEFSp(
-        AppDbContext dbContext,
-        ILogger<ItemmasterRepositoriesEFSp> logger)
+        AppDbContext dbContext
+        )
     {
         _dbContext = dbContext;
-        _logger = logger;
+        
     }
     public async Task<int> AddAsync(ItemmasterEntity entity)
     {
@@ -83,7 +83,7 @@ public class ItemmasterRepositoriesEFSp : IItemmasterRepository
 
     public async Task<ItemmasterEntity?> GetByIdAsync(int id)
     {
-        var items = await _dbContext.ItemMasters.FromSqlRaw("EXEC SP_Itemmaster_GetById @Id", new SqlParameter("@Id", id))
+        var items = await _dbContext.Itemmasters.FromSqlRaw("EXEC SP_Itemmaster_GetById @Id", new SqlParameter("@Id", id))
              .AsNoTracking()
              .ToListAsync();
         return items.FirstOrDefault();
@@ -91,7 +91,7 @@ public class ItemmasterRepositoriesEFSp : IItemmasterRepository
 
     public async Task<IEnumerable<ItemmasterEntity>> GetAllAsync()
     {
-        return await _dbContext.ItemMasters
+        return await _dbContext.Itemmasters
             .FromSqlRaw("EXEC sp_Itemmaster_GetAll")
             .ToListAsync();
     }
@@ -109,7 +109,7 @@ public class ItemmasterRepositoriesEFSp : IItemmasterRepository
 
 
     {
-        _logger.LogInformation("ItemsMaster Service Repostiory GetAllPaged Async Method Called");
+       
         using (var connection = _dbContext.Database.GetDbConnection())
         {
             await connection.OpenAsync();
@@ -180,4 +180,44 @@ public class ItemmasterRepositoriesEFSp : IItemmasterRepository
             };
         }
     }
+    public async Task<int> GetActiveItemCountByCategoryAsync(int categoryId)
+
+    {
+
+        using var connection = _dbContext.Database.GetDbConnection();
+
+
+        if (connection.State != ConnectionState.Open)
+
+        {
+
+            await connection.OpenAsync();
+
+        }
+
+
+        using var command = connection.CreateCommand();
+
+
+        command.CommandText = "dbo.sp_Itemmaster_GetActiveCountByCategory";
+
+        command.CommandType = CommandType.StoredProcedure;
+
+
+        command.Parameters.Add(
+
+            new SqlParameter("@CategoryId", categoryId));
+
+
+        var result = await command.ExecuteScalarAsync();
+
+
+        return result == null || result == DBNull.Value
+
+            ? 0
+
+            : Convert.ToInt32(result);
+
+    }
+
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36616.10
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11925.98 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceCoreAPI", "InvoiceCoreAPI\InvoiceCoreAPI.csproj", "{A8E6B3BA-6904-400E-8084-AC6F9CB8AAC0}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.AI", "Invoice.AI\Invoice.AI.csproj", "{3C001191-84FF-4BB6-AEB5-E1F0AE289CE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.Model", "Invoice.Model\Invoice.Model.csproj", "{6E37FE9A-CC93-4DF8-B413-A6F8B8037015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.DAL.Test", "Invoice.DAL.Test\Invoice.DAL.Test.csproj", "{12A6CB39-991C-4CB1-9372-8755CC7D3542}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{6E37FE9A-CC93-4DF8-B413-A6F8B8037015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E37FE9A-CC93-4DF8-B413-A6F8B8037015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E37FE9A-CC93-4DF8-B413-A6F8B8037015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A6CB39-991C-4CB1-9372-8755CC7D3542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12A6CB39-991C-4CB1-9372-8755CC7D3542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A6CB39-991C-4CB1-9372-8755CC7D3542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A6CB39-991C-4CB1-9372-8755CC7D3542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,7 +15,7 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<ItemmasterEntity> ItemMasters { get; set; }
+    public DbSet<ItemmasterEntity> Itemmasters { get; set; }
 
     public DbSet<CategoryEntity> Category { get; set; }
     public DbSet<UsersEntity> Users { get; set; }

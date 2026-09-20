@@ -17,5 +17,6 @@ namespace Invoice.BAL.Contracts
 
         Task<PagedResultDto<ItemmasterDto>> GetAllPagedAsync(
 ItemmasterFilterDto search);
+        Task<int> GetActiveItemCountByCategoryAsync(int categoryId);
     }
 }
