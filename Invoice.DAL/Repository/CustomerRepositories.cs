@@ -65,7 +65,8 @@ public class CustomerRepositories : ICustomerRepository
             @Country,
             @ZipCode,
             @GstNo,
-             @IsActive",
+             @IsActive,
+             @IsDeleted",
 
             new SqlParameter("@Id", entity.Id),
             new SqlParameter("@CustomerCode", entity.CustomerCode),
@@ -80,7 +81,8 @@ public class CustomerRepositories : ICustomerRepository
             new SqlParameter("@Country", (object?)entity.Country ?? DBNull.Value),
             new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
             new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value),
-            new SqlParameter("@IsActive", entity.IsActive)
+            new SqlParameter("@IsActive", entity.IsActive),
+            new SqlParameter("@IsDeleted", entity.IsDeleted)
             );
         return affectedRows > 0;
     }
@@ -168,4 +170,16 @@ public class CustomerRepositories : ICustomerRepository
             };
         }
     }
+    public async Task<int> GetCustomerCountAsync(bool? activeOnly)
+    {
+        var query = _dbContext.Customers
+            .Where(x => x.IsDeleted != true);
+        if (activeOnly.HasValue)
+        {
+            query = query.Where(x =>
+                x.IsActive == activeOnly.Value);
+        }
+        return await query.CountAsync();
+    }
+
 }

@@ -66,6 +66,7 @@ public class VendorRepositories : IVendorRepository
         @Country,
         @ZipCode,
         @GstNo,
+        @IsDeleted,
         @IsActive",
 
             new SqlParameter("@Id", entity.Id),
@@ -81,6 +82,7 @@ public class VendorRepositories : IVendorRepository
             new SqlParameter("@Country", (object?)entity.Country ?? DBNull.Value),
             new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
             new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value),
+            new SqlParameter("@IsDeleted", (object?)entity.IsDeleted ?? DBNull.Value),
         new SqlParameter("@IsActive", entity.IsActive));
 
         return affectedRows > 0;
@@ -177,5 +179,16 @@ public class VendorRepositories : IVendorRepository
             Data = vendors,
             TotalRecords = totalRecords
         };
+    }
+    public async Task<int> GetVendorCountAsync(bool? activeOnly)
+    {
+        var vendors = await GetAllAsync();
+        var query = vendors.AsEnumerable();
+        if (activeOnly.HasValue)
+        {
+            query = query.Where(x =>
+                x.IsActive == activeOnly.Value);
+        }
+        return query.Count();
     }
 }
