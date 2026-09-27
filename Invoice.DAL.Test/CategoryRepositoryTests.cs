@@ -8,13 +8,8 @@ namespace Invoice.DAL.Test;
 
 public class CategoryRepositoryTests
 {
-    private const string ConnectionString =
-        "Server=DESKTOP-L49SQD0\\SQLEXPRESS,1435;" +
-        "Database=Invoice_Test;" +
-        "User Id=sa;" +
-        "Password=123456;" +
-        "Encrypt=False;" +
-        "TrustServerCertificate=True";
+    private static string ConnectionString = TestDatabase.ConnectionString;
+
 
     private static AppDbContext CreateDbContext()
     {
