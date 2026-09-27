@@ -758,7 +758,7 @@ public class UserRepositoriesSpDapTests
 
         var filter = new Invoice.DTOs.UserFilterDto
         {
-            UserName = "TSTUSER002",
+            UserName = "TESTUSER002",
             PageNumber = 1,
             PageSize = 10
         };
@@ -808,10 +808,15 @@ public class UserRepositoriesSpDapTests
     // 18. PAGING - ACTIVE FILTER
     // ============================================================
 
+
     [Fact]
+
     public async Task GetPagedAsync_ShouldFilterByActiveStatus()
+
     {
+
         await using var connection = CreateConnection();
+
         await connection.OpenAsync();
 
         await SeedTestDataAsync(connection);
@@ -819,21 +824,34 @@ public class UserRepositoriesSpDapTests
         var repository = CreateRepository(connection);
 
         var filter = new Invoice.DTOs.UserFilterDto
+
         {
+
+            UserName = "TSTUSER",
+
             IsActive = true,
+
             PageNumber = 1,
+
             PageSize = 10
+
         };
 
         var result = await repository.GetAllPagedAsync(filter);
 
         Assert.Equal(2, result.TotalRecords);
+
         Assert.Equal(2, result.Data.Count());
 
         Assert.All(
+
             result.Data,
+
             x => Assert.True(x.IsActive));
+
     }
+
+
 
     // ============================================================
     // 19. UPDATE LAST LOGIN

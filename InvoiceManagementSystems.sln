@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.DAL.Test", "Invoice
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.BAL.Test", "Invoice.BAL.Test\Invoice.BAL.Test.csproj", "{34483B04-73C5-4F72-952F-865CF648B3F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.CoreAPI", "Invoice.CoreAPI\Invoice.CoreAPI.csproj", "{D55B63E2-A65C-4AA2-98BD-BB3B85E33F86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.CoreAPI.Test", "Invoice.CoreAPI.Test\Invoice.CoreAPI.Test.csproj", "{C89D64D9-9B78-4381-9889-2CD900D9D2D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{34483B04-73C5-4F72-952F-865CF648B3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34483B04-73C5-4F72-952F-865CF648B3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34483B04-73C5-4F72-952F-865CF648B3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55B63E2-A65C-4AA2-98BD-BB3B85E33F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55B63E2-A65C-4AA2-98BD-BB3B85E33F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55B63E2-A65C-4AA2-98BD-BB3B85E33F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55B63E2-A65C-4AA2-98BD-BB3B85E33F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
