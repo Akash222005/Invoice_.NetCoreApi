@@ -14,6 +14,7 @@ using System.Text;
 using Invoice.CoreAPI.Middleware;
 using Serilog;
 using Asp.Versioning;
+using Invoice.AI;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
@@ -219,6 +220,7 @@ builder.Services.AddAuthorization();
 // ============================================================
 // Build Application
 // ============================================================
+builder.Services.AddInvoiceAI(builder.Configuration);
 
 var app = builder.Build();
 

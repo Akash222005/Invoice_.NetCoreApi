@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.CoreAPI", "Invoice.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.CoreAPI.Test", "Invoice.CoreAPI.Test\Invoice.CoreAPI.Test.csproj", "{C89D64D9-9B78-4381-9889-2CD900D9D2D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.AI", "Invoice.AI\Invoice.AI.csproj", "{80541CF4-EDA0-4EE0-9493-E09CDECB18B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice.AI.Tests", "Invoice.AI.Tests\Invoice.AI.Tests.csproj", "{8D87BE1F-2F3E-4EB9-AEFC-AF4AFFD89348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C89D64D9-9B78-4381-9889-2CD900D9D2D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80541CF4-EDA0-4EE0-9493-E09CDECB18B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80541CF4-EDA0-4EE0-9493-E09CDECB18B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80541CF4-EDA0-4EE0-9493-E09CDECB18B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80541CF4-EDA0-4EE0-9493-E09CDECB18B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D87BE1F-2F3E-4EB9-AEFC-AF4AFFD89348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D87BE1F-2F3E-4EB9-AEFC-AF4AFFD89348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D87BE1F-2F3E-4EB9-AEFC-AF4AFFD89348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D87BE1F-2F3E-4EB9-AEFC-AF4AFFD89348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
