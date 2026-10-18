@@ -775,7 +775,12 @@ public class VendorRepositoriesTests
         await using var context = CreateDbContext();
         var repository = new VendorRepositories(context);
 
+        // Remove prior test data and measure baseline directly from the table so
+        // the expectation is stable regardless of repository implementation.
         await CleanupTestDataAsync(context);
+
+        var dbCountBefore = await context.Vendor.CountAsync();
+
         await SeedTestDataAsync(context);
 
         var result = await repository.GetVendorCountAsync(null);
@@ -788,8 +793,10 @@ public class VendorRepositoriesTests
                 x.VendorCode == "TSTV004")
             .CountAsync();
 
+        // Confirm seed added four test vendors and repository count increased by
+        // the number of seeded rows when measured against the direct table count.
         Assert.Equal(4, testVendors);
-        Assert.Equal(4, result);
+        Assert.Equal(dbCountBefore + testVendors, result);
     }
 
     // ============================================================
