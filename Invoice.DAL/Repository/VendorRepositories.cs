@@ -83,8 +83,8 @@ namespace Invoice.DAL.Repository
                 new SqlParameter("@Country", (object?)entity.Country ?? DBNull.Value),
                 new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
                 new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value),
-                new SqlParameter("@IsDeleted", (object?)entity.IsDeleted ?? DBNull.Value),
-            new SqlParameter("@IsActive", entity.IsActive));
+                new SqlParameter("@IsDeleted", entity.IsDeleted),
+                new SqlParameter("@IsActive", entity.IsActive));
 
             return affectedRows > 0;
         }

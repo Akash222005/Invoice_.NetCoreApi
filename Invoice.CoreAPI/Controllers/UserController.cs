@@ -162,7 +162,7 @@ public class UserController : ControllerBase
     // DELETE: api/v1/User/Delete/1
     // ============================================================
     [HttpDelete("Delete/{id:int}")]
-    public async Task<IActionResult> Delete(int id,string UpdatedBy)
+    public async Task<IActionResult> Delete(int id, string UpdatedBy)
     {
         try
         {
