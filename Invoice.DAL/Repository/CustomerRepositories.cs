@@ -56,7 +56,7 @@ public class CustomerRepositories : ICustomerRepository
             @CustomerCode,
             @CustomerName,
             @ContactPerson,
-            @MobilNo,
+            @MobileNo,
             @Email,
             @Address1,
             @Address2,
@@ -72,7 +72,7 @@ public class CustomerRepositories : ICustomerRepository
             new SqlParameter("@CustomerCode", entity.CustomerCode),
             new SqlParameter("@CustomerName", entity.CustomerName),
             new SqlParameter("@ContactPerson", (object?)entity.ContactPerson ?? DBNull.Value),
-            new SqlParameter("@MobilNo", (object?)entity.MobileNo ?? DBNull.Value),
+            new SqlParameter("@MobileNo", (object?)entity.MobileNo ?? DBNull.Value),
             new SqlParameter("@Email", (object?)entity.Email ?? DBNull.Value),
             new SqlParameter("@Address1", (object?)entity.Address1 ?? DBNull.Value),
             new SqlParameter("@Address2", (object?)entity.Address2 ?? DBNull.Value),
@@ -82,7 +82,7 @@ public class CustomerRepositories : ICustomerRepository
             new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
             new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value),
             new SqlParameter("@IsActive", entity.IsActive),
-            new SqlParameter("@IsDeleted", entity.IsDeleted)
+            new SqlParameter("@IsDeleted", (object?)entity.IsDeleted ?? false)
             );
         return affectedRows > 0;
     }
