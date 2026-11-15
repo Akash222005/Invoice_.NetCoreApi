@@ -14,13 +14,16 @@ public class SalesInvoiceController : ApiControllerBase
 {
     private readonly ISalesInvoiceService _service;
     private readonly ILogger<SalesInvoiceController> _logger;
+    private readonly IDocumentPrintService _print;
 
     public SalesInvoiceController(
         ISalesInvoiceService service,
-        ILogger<SalesInvoiceController> logger)
+        ILogger<SalesInvoiceController> logger,
+        IDocumentPrintService print)
     {
         _service = service;
         _logger = logger;
+        _print = print;
     }
 
     // GET: api/v1/SalesInvoice/GetAll
@@ -119,4 +122,17 @@ public class SalesInvoiceController : ApiControllerBase
             await _service.CancelAsync(id, CurrentUser);
             return Ok(Done("Sales invoice cancelled successfully"));
         }, _logger, "Error cancelling Sales Invoice");
+
+    [HttpGet("{id:int}/pdf")]
+
+    [Produces("application/pdf")]
+    public async Task<IActionResult> GetPdf(int id)
+
+    {
+
+        var bytes = await _print.GetSalesInvoicePdfAsync(id);
+
+        return bytes == null ? NotFound() : File(bytes, "application/pdf", $"SalesInvoice-{id}.pdf");
+
+    }
 }
