@@ -701,7 +701,6 @@ public class VendorRepositoriesTests
             "Vendor Two",
 
             null,
-
             null,
             null,
 
