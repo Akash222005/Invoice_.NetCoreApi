@@ -83,8 +83,15 @@ namespace Invoice.DAL.Repository
                 new SqlParameter("@Country", (object?)entity.Country ?? DBNull.Value),
                 new SqlParameter("@ZipCode", (object?)entity.ZipCode ?? DBNull.Value),
                 new SqlParameter("@GstNo", (object?)entity.GstNo ?? DBNull.Value),
-                new SqlParameter("@IsDeleted", entity.IsDeleted),
-                new SqlParameter("@IsActive", entity.IsActive));
+               new SqlParameter("@IsActive", SqlDbType.Bit)
+               {
+                   Value = entity.IsActive
+               },
+new SqlParameter("@IsDeleted", SqlDbType.Bit)
+{
+    Value = entity.IsDeleted
+}
+    );
 
             return affectedRows > 0;
         }
@@ -117,6 +124,7 @@ namespace Invoice.DAL.Repository
         string? VendorName,
         string? MobileNo,
         string? City,
+        bool? IsActive,
         int PageNumber,
         int PageSize)
         {
@@ -133,6 +141,10 @@ namespace Invoice.DAL.Repository
             command.Parameters.Add(new SqlParameter("@VendorName", (object?)VendorName ?? DBNull.Value));
             command.Parameters.Add(new SqlParameter("@MobileNo", (object?)MobileNo ?? DBNull.Value));
             command.Parameters.Add(new SqlParameter("@City", (object?)City ?? DBNull.Value));
+            command.Parameters.Add(new SqlParameter("@IsActive", SqlDbType.Bit)
+            {
+                Value = (object?)IsActive ?? DBNull.Value
+            });
             command.Parameters.Add(new SqlParameter("@PageNumber", PageNumber));
             command.Parameters.Add(new SqlParameter("@PageSize", PageSize));
 

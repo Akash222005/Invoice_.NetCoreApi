@@ -15,6 +15,7 @@ namespace Invoice.BAL.Contracts
         Task<PagedResultDto<CategoryDto>> GetAllPagedAsync(
     string? Code,
     string? Name,
+    bool? isActive,
     int pageNumber,
     int pageSize);
 

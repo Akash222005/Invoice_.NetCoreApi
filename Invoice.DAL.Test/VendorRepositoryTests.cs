@@ -617,6 +617,7 @@ public class VendorRepositoriesTests
             null,
 
             null,
+            null,
 
             1,
 
@@ -656,6 +657,7 @@ public class VendorRepositoriesTests
 
             null,
 
+            null,
             null,
 
             1,
@@ -699,7 +701,7 @@ public class VendorRepositoriesTests
             "Vendor Two",
 
             null,
-
+            null,
             null,
 
             1,
@@ -745,6 +747,7 @@ public class VendorRepositoriesTests
             null,
 
             "Chennai",
+            null,
 
             1,
 

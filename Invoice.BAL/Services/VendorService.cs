@@ -45,6 +45,7 @@ namespace Invoice.BAL.Services
             string? VendorName,
             string? MobileNo,
             string? City,
+            bool? IsActive,
             int PageNumber,
             int PageSize)
         {
@@ -53,6 +54,7 @@ namespace Invoice.BAL.Services
                 VendorName,
                 MobileNo,
                 City,
+                IsActive,
                 PageNumber,
                 PageSize);
 

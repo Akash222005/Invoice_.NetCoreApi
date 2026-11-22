@@ -53,9 +53,9 @@ public class VendorEntity
     [StringLength(50)]
     public string? GstNo { get; set; }
 
-    public bool? IsActive { get; set; }
+    public bool IsActive { get; set; } = true;
 
-    public bool? IsDeleted { get; set; }
+    public bool IsDeleted { get; set; } = false;
 
     [StringLength(100)]
     public string? CreatedBy { get; set; }

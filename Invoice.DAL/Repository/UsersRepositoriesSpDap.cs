@@ -167,6 +167,9 @@ public class UsersRepositoriesSpDap : IUsersRepository
                 Email = filter.Email,
                 FirstName = filter.FirstName,
                 LastName = filter.LastName,
+                City = string.IsNullOrWhiteSpace(filter.City)
+                ? null
+                : filter.City.Trim(),
                 IsActive = filter.IsActive,
                 PageNumber = filter.PageNumber,
                 PageSize = filter.PageSize
