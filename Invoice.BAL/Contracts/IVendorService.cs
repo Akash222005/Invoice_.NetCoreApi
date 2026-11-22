@@ -24,6 +24,7 @@ namespace Invoice.BAL.Contracts
             string? MobileNo,
 
             string? City,
+            bool? IsActive,
 
             int pageNumber,
 

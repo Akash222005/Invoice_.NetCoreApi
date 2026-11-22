@@ -175,6 +175,7 @@ public class CategoryRepositories : ICategoryRepository
 string? Code,
 
 string? Name,
+bool? IsActive,
 
 int pageNumber,
 
@@ -197,6 +198,11 @@ int pageSize)
             command.Parameters.Add(new SqlParameter("@Code", (object?)Code ?? DBNull.Value));
 
             command.Parameters.Add(new SqlParameter("@Name", (object?)Name ?? DBNull.Value));
+            command.Parameters.Add(
+    new SqlParameter("@IsActive", SqlDbType.Bit)
+    {
+        Value = (object?)IsActive ?? DBNull.Value
+    });
 
             command.Parameters.Add(new SqlParameter("@PageNumber", pageNumber));
 

@@ -557,6 +557,7 @@ public class CustomerControllerTests
                 "Customer",
                 "111",
                 "Chennai",
+                true,
                 1,
                 10))
             .ReturnsAsync(pagedResult);
@@ -567,6 +568,7 @@ public class CustomerControllerTests
             "Customer",
             "111",
             "Chennai",
+            true,
             1,
             10);
 
@@ -597,6 +599,7 @@ public class CustomerControllerTests
                 "Customer",
                 "111",
                 "Chennai",
+                true,
                 1,
                 10),
             Times.Once);
@@ -619,12 +622,14 @@ public class CustomerControllerTests
                 null,
                 null,
                 null,
+                null,
                 1,
                 10))
             .ReturnsAsync(pagedResult);
 
         // Act
         var response = await _controller.GetAllPaged(
+            null,
             null,
             null,
             null,
@@ -647,6 +652,7 @@ public class CustomerControllerTests
                 null,
                 null,
                 null,
+                null,
                 1,
                 10),
             Times.Once);
@@ -663,6 +669,7 @@ public class CustomerControllerTests
                 "Customer",
                 "111",
                 "Chennai",
+                true,
                 1,
                 10))
             .ThrowsAsync(new Exception("Paging failed"));
@@ -673,6 +680,7 @@ public class CustomerControllerTests
             "Customer",
             "111",
             "Chennai",
+            true,
             1,
             10);
 

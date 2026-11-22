@@ -19,6 +19,8 @@ public interface ICategoryRepository
 
     string? Name,
 
+    bool? isActive,
+
     int pageNumber,
 
     int pageSize);
